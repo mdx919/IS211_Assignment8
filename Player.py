@@ -22,3 +22,22 @@ class Player:
 
     def get_turn_score(self):
         return self.turn_score
+
+
+class ComputerPlayer(Player):
+    def play(self, total_score):
+        if 100 - total_score < 25:
+            return False
+        else:
+            return True
+
+
+class PlayerFactory:
+    def __init__(self, player_name):
+        if player_name.lower() == 'human':
+            return Player(player_name)
+        elif player_name.lower() == 'computer':
+            return ComputerPlayer(player_name)
+
+
+p = PlayerFactory('computer')

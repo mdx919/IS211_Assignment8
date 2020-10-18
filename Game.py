@@ -15,4 +15,7 @@ class Game:
     def reset_game(self):
         self.players = []
 
+# class Proxy(Game):
+#     def __init__(self):
+#
 

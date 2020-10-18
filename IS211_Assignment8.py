@@ -5,6 +5,9 @@ from Game import Game
 
 # random.seed(0) was giving same number so i commented it out
 
+def create_players(p1, p2, timed):
+    factory = Factory()
+
 def start_game(num_players):
     game_over = False
     g1 = Game(num_players)
@@ -55,9 +58,11 @@ def roll_dice():
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--numPlayers")
+# parser.add_argument("--numPlayers")
+parser.add_argument("--player1")
+parser.add_argument("--player2")
 args = parser.parse_args()
-if not args.numPlayers:
-    start_game(2)  # start game with default 2 players
+if not args.player1 or not args.player2:
+    print('Please provide 2 player using --player1 and --player2 flag')  # start game with default 2 players
 else:
     start_game(int(args.numPlayers))  # start game with numPlayers
