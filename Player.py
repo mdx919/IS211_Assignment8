@@ -33,11 +33,8 @@ class ComputerPlayer(Player):
 
 
 class PlayerFactory:
-    def __init__(self, player_name):
+    def get_player(self, player_name):
         if player_name.lower() == 'human':
             return Player(player_name)
         elif player_name.lower() == 'computer':
             return ComputerPlayer(player_name)
-
-
-p = PlayerFactory('computer')
